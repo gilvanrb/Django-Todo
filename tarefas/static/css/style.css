@@ -1,0 +1,36 @@
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*NAVBAR*/
+.navbar{
+    background-color: rgb(19, 20, 20) !important;
+    border-bottom: 1px solid !important; /*Borda superior "TODO" (navbar-brand)*/
+}
+.navbar-nav{
+    margin: auto !important;
+
+}
+.navbar-brand{
+    font-weight: bold !important; /*Fonte do "TODO"*/
+    font-size: 1.6em !important; /*Tamanho do "TODO"*/
+}
+.nav-link{
+    color: aliceblue !important; /*Cor do Tarefas, Usuário Sobre nós*/
+    font-size: 1em !important; /*Tamanho dos Tarefas...*/
+    letter-spacing: 2px !important;
+}
+
+footer{ /*Borda inferior (footer)*/
+    background-color: black;
+    border-top: 1px solid black !important; /*Cor Borda inferior*/
+    color: rgb(250, 252, 250); /*Cor do nome Django*/
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.6em !important;
+
+
+}
+
