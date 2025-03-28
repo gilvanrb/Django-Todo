@@ -5,7 +5,7 @@ body{
 
 /*NAVBAR*/
 .navbar{
-    background-color: rgb(19, 20, 20) !important;
+    background-color: rgb(10, 14, 14) !important;
     border-bottom: 1px solid !important; /*Borda superior "TODO" (navbar-brand)*/
 }
 .navbar-nav{
@@ -21,6 +21,50 @@ body{
     font-size: 1em !important; /*Tamanho dos Tarefas...*/
     letter-spacing: 2px !important;
 }
+
+/*Botão adicionar*/
+.add-div{
+    background-color: rgb(19, 104, 179);
+    color: aliceblue;
+    padding: 0.5em !important;
+    border-radius: 5px !important;
+}
+#add-buton{
+    text-decoration: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+/*Main*/
+.list-div{ /*Distanciar o "adicionar tarefa"*/
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+}
+.barra{
+    margin-top: 2em !important;
+}
+.input-group-btn{ /*borda da lupa*/
+    border: 1px solid rgb(0, 0, 0, 0. 206)!important;
+    border-radius: 5px !important;
+}
+/*Lista*/
+.item{
+    border-bottom: 1px dotted black !important; /*Linha pontilhada*/
+    height: 3em !important;
+    font-size: 2em !important;
+    margin: 1em !important;
+}
+
+.fa.fa-trash{
+    color: red !important;
+
+}
+.fa.fa-edit{
+    color: green !important;
+}
+.icones{
+    text-align: end !important;
+}
+
 
 footer{ /*Borda inferior (footer)*/
     background-color: black;
