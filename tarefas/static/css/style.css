@@ -64,7 +64,9 @@ body{
 .icones{
     text-align: end !important;
 }
-
+.link{
+    text-decoration: none !important;
+}
 
 footer{ /*Borda inferior (footer)*/
     background-color: black;

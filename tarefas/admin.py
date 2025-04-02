@@ -4,4 +4,4 @@ from .models import Tarefas
 
 admin.site.register(Tarefas)
 
-# Register your models here.
+# Register your models here. # Registre seus modelos aqui.
