@@ -24,4 +24,4 @@ def novaTarefa(request):
 
     else:
         form = tarefaForm()
-        return render(request, 'tarefas/addTarefa.html', {'form':form})
+        return render(request, 'tarefas/addTarefas.html', {'form':form})

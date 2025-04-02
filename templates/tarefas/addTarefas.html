@@ -5,11 +5,11 @@
 {% block content %}
 <div class="list-div">
     <h1>Adicione sua nova tarefa:</h1>
-    <form method="Post">
+    <form method="post">
         {% csrf_token %}
-        {{% form.as_P %}}
+        {{ form.as_p }}
 
-        <input type="submit" class="btn btn-sucess"
+        <input type="submit" class="btn btn-success"
         value="Criar Tarefa">
 
 </div>
