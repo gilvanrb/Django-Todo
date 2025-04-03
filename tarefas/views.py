@@ -25,3 +25,24 @@ def novaTarefa(request):
     else:
         form = tarefaForm()
         return render(request, 'tarefas/addTarefas.html', {'form':form})
+    
+def editTarefa(request, id):
+    tarefa = get_object_or_404(Tarefas, pk=id)
+    form = tarefaForm(instance=tarefa)
+
+    if request.method == 'POST':
+        form = tarefaForm(request.POST, instance=tarefa)
+
+        if form.is_valid():
+            tarefa.save()
+            return redirect('/')
+        else:
+            return render(request, 'tarefas/editTarefa.html', {'form': form, 'tarefa': tarefa})
+
+    else:
+        return render(request, 'tarefas/editTarefa.html', {'form': form, 'tarefa': tarefa})
+    
+def deleteTarefa(request, id):
+    tarefa = get_object_or_404(Tarefas, pk=id)
+    tarefa.delete()
+    return redirect('/')
