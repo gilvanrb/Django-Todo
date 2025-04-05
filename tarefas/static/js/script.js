@@ -16,4 +16,12 @@ document.querySelectorAll('.delete-btn').forEach(
 
         });
     }
-)
+);
+
+//função para pesquisar
+
+document.getElementById("search-bt").addEventListener("click", function(){
+    document,getElementById("search-form").onsubmit();
+});
+
+
