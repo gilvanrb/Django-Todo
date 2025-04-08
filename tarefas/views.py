@@ -6,12 +6,12 @@ from .forms import tarefaForm
 # Create your views here.
 @login_required
 def listaTarefa(request):
-    tarefas_list = Tarefas.objects.all().order_by('-created_at')
+    tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.user)
 
     search = request.GET.get('search')
 
     if search:
-        tarefas = Tarefas.objects.filter(titulo__icontains=search)
+        tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
         return render(request, 'tarefas/list.html', {'tarefas':tarefas})
     
     else:
@@ -28,6 +28,7 @@ def novaTarefa(request):
         if form.is_valid():
             tarefa = form.save(commit=False)
             tarefa.status = 'andamento'
+            tarefa.usuario = request.user
             tarefa.save()
             return redirect('/')
 
