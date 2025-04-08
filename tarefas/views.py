@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Tarefas
 from .forms import tarefaForm
 
 # Create your views here.
-
+@login_required
 def listaTarefa(request):
     tarefas_list = Tarefas.objects.all().order_by('-created_at')
 
@@ -15,11 +16,11 @@ def listaTarefa(request):
     
     else:
       return render(request, 'tarefas/list.html', {'tarefas':tarefas_list})
-
+@login_required
 def tarefaView(request, id):
     tarefa = get_object_or_404(Tarefas, pk=id)
     return render(request, 'tarefas/tarefa.html', {'tarefa':tarefa})
-
+@login_required
 def novaTarefa(request):
     if request.method == 'POST':
         form = tarefaForm(request.POST)
@@ -33,7 +34,7 @@ def novaTarefa(request):
     else:
         form = tarefaForm()
         return render(request, 'tarefas/addTarefas.html', {'form':form})
-    
+@login_required  
 def editTarefa(request, id):
     tarefa = get_object_or_404(Tarefas, pk=id)
     form = tarefaForm(instance=tarefa)
@@ -49,7 +50,7 @@ def editTarefa(request, id):
 
     else:
         return render(request, 'tarefas/editTarefa.html', {'form': form, 'tarefa': tarefa})
-    
+@login_required  
 def deleteTarefa(request, id):
     tarefa = get_object_or_404(Tarefas, pk=id)
     tarefa.delete()

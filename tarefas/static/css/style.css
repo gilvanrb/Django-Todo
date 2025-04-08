@@ -79,6 +79,15 @@ footer{ /*Borda inferior (footer)*/
     justify-content: center !important;
     padding: 1.6em !important;
 
-
+}
+.auth-card{
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+    
+}
+.charge-form-p{
+    margin-top: 2em !important;
+    text-align: center !important;
+    
 }
 
